@@ -32,10 +32,21 @@ const Navbar_loggedIn = (props) => {
   
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 " >
+        <li class="nav-item">
+          <Link class="nav-link text-light" to="/myprofile">My Profile</Link>
+          </li>
           <li class="nav-item">
           <Link class="nav-link text-light" to="/">Home</Link>
           </li>
-        <li class="nav-item dropdown">
+       
+          <li class="nav-item">
+          <Link class="nav-link text-light" to="/about">About Us</Link>
+          </li>
+          
+          <li class="nav-item">
+          <Link class="nav-link text-light" to="/contactus">Contact Us</Link>
+          </li>
+          <li class="nav-item dropdown">
         <Link class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sites
         </Link>
@@ -48,12 +59,6 @@ const Navbar_loggedIn = (props) => {
          <Link class="dropdown-item  text-dark" to="/codechef">CodeChef</Link>
         </div>
       </li>
-          <li class="nav-item">
-          <Link class="nav-link text-light" to="/about">About Us</Link>
-          </li>
-          <li class="nav-item">
-          <Link class="nav-link text-light" to="/contactus">Contact Us</Link>
-          </li>
           <li class="nav-item">
             <button class="nav-link text-light logout_btn" onClick={_LogoutUser}>LogOut</button>
           </li>

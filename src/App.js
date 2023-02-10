@@ -12,7 +12,7 @@ import KickStart from './SiteComponents/KickStart'
 import Hackerearth from './SiteComponents/Hackerearth'
 import CodeForces from './SiteComponents/CodeForces'
 import CodeChef from './SiteComponents/CodeChef'
-
+import MyProfile from './Profile/MyProfile'
 const App = () => {
   const [login, setlogin] = useState(localStorage.getItem('loginData')?true:false);
   useEffect(() => {
@@ -37,6 +37,7 @@ const App = () => {
       }
       <Routes>
       <Route path='/' element={login===true?<Home />:<Login loginCheck={loginCheck} />}/>
+      <Route path='/myprofile' element={login===true?<MyProfile />:<Login loginCheck={loginCheck} />} />
       <Route path='/home' element={login===true?<Home/>:<Login loginCheck={loginCheck} />}/>
       <Route path='/contactus' element={<ComponentRender name="contactus"/>}/>
       <Route path='/about' element={<ComponentRender name="about"/>}/>
@@ -48,6 +49,7 @@ const App = () => {
       <Route path='/kickstart' element={login===true?<KickStart />:<Login loginCheck={loginCheck} />} />
       <Route path='/codeforces' element={login===true?<CodeForces />:<Login loginCheck={loginCheck} />} />
       <Route path='/codechef' element={login===true?<CodeChef />:<Login loginCheck={loginCheck} />} />
+      
       </Routes>
     </div>
     </Router>

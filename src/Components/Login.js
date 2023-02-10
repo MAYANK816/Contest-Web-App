@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {useNavigate,Link} from 'react-router-dom'
 import "./Login.css"
 import axios from 'axios';
+import swal from 'sweetalert';
 const Login = (props) => {
   const [data, setdata] = useState({useremail:'',password:''})
   const navigate=useNavigate();
@@ -11,9 +12,13 @@ const Login = (props) => {
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
-          localStorage.setItem('loginData',JSON.stringify(res.data.userEmail))
+          localStorage.setItem('loginData',JSON.stringify(res.data.user))
           props.loginCheck(true);
           navigate("/home");
+        }
+       else if(res.data.status===404)
+        {
+          swal("Oops!", "Please Check details", "error");
         }
       })
       .catch((err) => {

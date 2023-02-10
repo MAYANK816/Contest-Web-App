@@ -9,7 +9,7 @@ const SignUp = (props) => {
     if (data.useremail && data.password) {
       axios.post('http://localhost:8001/login',data)
       .then((res) => {  console.log(res);
-        if (res.data.status === 500 || res.data.status === 200) {
+        if (res.data.status === 200) {
           localStorage.setItem('loginData',JSON.stringify(res.data.alreadyExists))
           props.loginCheck(true);
           navigate("/");
