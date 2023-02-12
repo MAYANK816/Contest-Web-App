@@ -7,7 +7,7 @@ const SignUp = (props) => {
   const navigate=useNavigate();
   const setLoginData = () => {
     if (data.useremail && data.password) {
-      axios.post('http://localhost:8001/login',data)
+      axios.post('https://contest-web-app-backend.vercel.app/login',data)
       .then((res) => {  console.log(res);
         if (res.data.status === 200) {
           localStorage.setItem('loginData',JSON.stringify(res.data.alreadyExists))

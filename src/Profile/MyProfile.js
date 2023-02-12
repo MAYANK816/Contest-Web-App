@@ -11,7 +11,7 @@ const MyProfile = () => {
 
   const updateUser = () => {
     if (userDetails.newpassword === userDetails.cpassword && userDetails.password===data[0].password && userDetails.cpassword) {
-      axios.put('http://localhost:8001/updateUser',{
+      axios.put('https://contest-web-app-backend.vercel.app /updateUser',{
         useremail:userDetails.useremail,
         password:userDetails.newpassword
       })
@@ -41,7 +41,7 @@ const MyProfile = () => {
       <h1>My Profile</h1>
         <label>Email</label>
         <input type='text' name="useremail" placeholder={`${userDetails.useremail}`} onChange={changeHandler} required disabled/>
-        <label>Password</label>
+        <label>Current Password</label>
         <input type='password' name="password"  placeholder='Enter your password'onChange={changeHandler} required/>
         <label>New Password</label>
         <input type='password' name="newpassword"  placeholder='Enter your password'onChange={changeHandler} required/>

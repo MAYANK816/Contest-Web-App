@@ -8,7 +8,7 @@ const Login = (props) => {
   const navigate=useNavigate();
   const setLoginData = () => {
     if (data.useremail && data.password) {
-      axios.post('http://localhost:8001/loginUser',data)
+      axios.post('https://contest-web-app-backend.vercel.app/loginUser',data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
