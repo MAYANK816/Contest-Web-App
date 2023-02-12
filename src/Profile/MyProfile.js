@@ -1,7 +1,6 @@
 import Lottie from "lottie-react";
 import devanimation from ".././devanimation.json";
 import axios from 'axios';
-
 import React,{useState} from 'react'
 import swal from 'sweetalert';
 import './Profile.css';

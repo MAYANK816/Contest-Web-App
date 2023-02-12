@@ -15,6 +15,7 @@ const Login = (props) => {
           localStorage.setItem('loginData',JSON.stringify(res.data.user))
           props.loginCheck(true);
           navigate("/home");
+          swal("Yeah!!", "Login Successfully", "success");
         }
        else if(res.data.status===404)
         {
