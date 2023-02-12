@@ -9,15 +9,21 @@ const SignUp = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '', username: '' })
   const navigate = useNavigate();
   const setLoginData = () => {
-    if (data.useremail && data.password) {
-      axios.post('https://contest-web-app-backend.vercel.app/login', data)
+    console.log(data)
+    if (data.useremail && data.password && data.username) {
+      axios.post('https://contest-web-app-backend.vercel.app/register', data)
         .then((res) => {
-          console.log(res);
           if (res.data.status === 200) {
             localStorage.setItem('loginData', JSON.stringify(res.data.alreadyExists))
             props.loginCheck(true);
             navigate("/");
             swal("Yeah!!", "Register Successfully", "success");
+          }
+          else if (res.data.status === 500) {
+            swal("Oops!!", "User Already Exists", "error");
+          }
+          else {
+            swal("Oops!!", "Site Error", "error");
           }
         })
         .catch((err) => {

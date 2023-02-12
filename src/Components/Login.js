@@ -12,7 +12,6 @@ const Login = (props) => {
     if (data.useremail && data.password) {
       axios.post('https://contest-web-app-backend.vercel.app/loginUser', data)
         .then((res) => {
-          console.log(res);
           if (res.data.status === 200) {
             localStorage.setItem('loginData', JSON.stringify(res.data.user))
             props.loginCheck(true);
@@ -20,11 +19,17 @@ const Login = (props) => {
             swal("Yeah!!", "Login Successfully", "success");
           }
           else if (res.data.status === 404) {
-            swal("Oops!", "Please Check details", "error");
+            swal("Oops!", "No Uuer found", "error");
+          }
+          else if (res.data.status === 500) {
+            swal("Oops!!", "Please check the credentials", "error");
+          }
+          else {
+            swal("Oops!!", "Site Error", "error");
           }
         })
         .catch((err) => {
-          console.log(err);
+          swal("Oops!", "Something went wrong", "error");
         })
     }
   }
