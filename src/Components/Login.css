@@ -1,6 +1,6 @@
 .Login_form{
     width: 100%;
-    height: 600px;
+    height: max-content;
     display: grid;
     place-items: center;
     margin-top: 50px;
@@ -10,7 +10,7 @@
     flex-direction: column;
     padding: 20px;
     width: 500px;
-    height: 500px;
+    height: max-content;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
