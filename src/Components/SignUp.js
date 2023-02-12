@@ -9,7 +9,6 @@ const SignUp = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '', username: '' })
   const navigate = useNavigate();
   const setLoginData = () => {
-    console.log(data)
     if (data.useremail && data.password && data.username) {
       axios.post('https://contest-web-app-backend.vercel.app/register', data)
         .then((res) => {
