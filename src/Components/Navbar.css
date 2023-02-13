@@ -35,7 +35,6 @@ nav{
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
-    z-index: 999;
 }
 
 
@@ -49,5 +48,7 @@ nav{
     outline: none;
 } */
 @media screen and (max-width:570px) {
-    
+    .nav-link{
+        margin-left: 5px;
+    }
 }

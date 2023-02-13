@@ -10,13 +10,15 @@ const Navbar = () => {
    <>
    <nav class="navbar navbar-expand-sm navbar-light ">
   <div class="container-fluid">
-    <a class="navbar-brand " href="/">
+    <div class="navbar-brand ">
     <Lottie style={{width:"65px"}}animationData={devanimation} loop={true} />;
-      </a>
+      </div>
     <button
       class="navbar-toggler text-light"
       type="button"
+      data-toggle="collapse"
       data-mdb-toggle="collapse"
+      data-target="#navbarSupportedContent"
       data-mdb-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"

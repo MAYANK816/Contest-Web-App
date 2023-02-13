@@ -20,8 +20,10 @@ const Navbar_loggedIn = (props) => {
       <button
         class="navbar-toggler text-light"
         type="button"
+        data-toggle="collapse"
         data-mdb-toggle="collapse"
         data-mdb-target="#navbarSupportedContent"
+        data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
