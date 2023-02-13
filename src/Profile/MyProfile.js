@@ -1,18 +1,34 @@
 import Lottie from "lottie-react";
 import devanimation from ".././devanimation.json";
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import swal from 'sweetalert';
 import './Profile.css';
 const MyProfile = () => {
-  const data = JSON.parse(localStorage.getItem('loginData'));
-  const [userDetails, setuserDetails] = useState({ useremail: data[0].useremail, password: '', cpassword: '', newpassword: '' })
+  const[userOgData,setuserOgData]=useState([]);
+  useEffect(() => {
+    let loginData = JSON.parse(localStorage.getItem('loginData'));
+    axios.get(`https://contest-web-app-backend.vercel.app/getUser/${loginData}`)
+    .then((res) => {
+      setuserOgData(res.data.user);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, [])
+
+
+
+
+
+  const [userDetails, setuserDetails] = useState({ useremail: userOgData[0].useremail,username:'', password: '', cpassword: '', newpassword: '' })
 
   const updateUser = () => {
-    if (userDetails.newpassword === userDetails.cpassword && userDetails.password === data[0].password && userDetails.cpassword) {
+    if (userDetails.newpassword === userDetails.cpassword && userDetails.password === userOgData[0].password && userDetails.cpassword) {
       axios.put('https://contest-web-app-backend.vercel.app /updateUser', {
         useremail: userDetails.useremail,
-        password: userDetails.newpassword
+        password: userDetails.newpassword,
+        username:userDetails.username
       })
         .then((res) => {
           console.log(res);
@@ -39,7 +55,9 @@ const MyProfile = () => {
           <Lottie className='lottieAnimation' animationData={devanimation} loop={true} />
           <h1>My Profile</h1>
           <label>Email</label>
-          <input type='text' name="useremail" placeholder={`${userDetails.useremail}`} onChange={changeHandler} required disabled />
+          <input type='text' name="useremail" value={`${userDetails.useremail}`} onChange={changeHandler} required disabled />
+          <label>UserName</label>
+          <input type='text' name="username" value={`${userOgData[0].username}`} onChange={changeHandler} required disabled/>
           <label>Current Password</label>
           <input type='password' name="password" placeholder='Enter your password' onChange={changeHandler} required />
           <label>New Password</label>
