@@ -5,6 +5,7 @@ import "./Login.css"
 import axios from 'axios';
 import swal from 'sweetalert';
 import Lottie from "lottie-react";
+
 const Login = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '' })
   const navigate = useNavigate();
@@ -13,10 +14,13 @@ const Login = (props) => {
       axios.post('https://contest-web-app-backend.vercel.app/loginUser', data)
         .then((res) => {
           if (res.data.status === 200) {
+            
             let userData=res.data.user;
             delete userData[0].password;
             localStorage.setItem('loginData', JSON.stringify(userData[0]._id))
+
             props.loginCheck(true);
+
             navigate("/home");
             swal("Yeah!!", "Login Successfully", "success");
           }
@@ -53,7 +57,7 @@ const Login = (props) => {
             <input type='checkbox' name="remember" placeholder='Enter your password' onChange={changeHandler} required />
             <label>Remember me</label>
           </div>
-          <Link href='/forgot_passcode'>Forgot Password</Link>
+          <Link to='/forgot_passcode'>Forgot Password</Link>
         </div>
         <button onClick={setLoginData} >
           LogIn

@@ -13,6 +13,7 @@ import Hackerearth from './SiteComponents/Hackerearth'
 import CodeForces from './SiteComponents/CodeForces'
 import CodeChef from './SiteComponents/CodeChef'
 import MyProfile from './Profile/MyProfile'
+import ForgotPassword from './Components/ForgotPassword'
 const App = () => {
   const [login, setlogin] = useState(localStorage.getItem('loginData')?true:false);
   useEffect(() => {
@@ -49,7 +50,7 @@ const App = () => {
       <Route path='/kickstart' element={login===true?<KickStart />:<Login loginCheck={loginCheck} />} />
       <Route path='/codeforces' element={login===true?<CodeForces />:<Login loginCheck={loginCheck} />} />
       <Route path='/codechef' element={login===true?<CodeChef />:<Login loginCheck={loginCheck} />} />
-      
+      <Route path='/forgot_passcode' element={<ForgotPassword/>} />
       </Routes>
     </div>
     </Router>
