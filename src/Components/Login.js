@@ -14,13 +14,9 @@ const Login = (props) => {
       axios.post('https://contest-web-app-backend.vercel.app/loginUser', data)
         .then((res) => {
           if (res.data.status === 200) {
-            
             let userData=res.data.user;
-            delete userData[0].password;
-            localStorage.setItem('loginData', JSON.stringify(userData[0]._id))
-
+            localStorage.setItem('loginData', JSON.stringify(userData))
             props.loginCheck(true);
-
             navigate("/home");
             swal("Yeah!!", "Login Successfully", "success");
           }

@@ -1,20 +1,33 @@
 import React,{useState} from 'react'
 import './ForgotPass.css'
 import axios from 'axios'
+import swal from 'sweetalert';
 const ForgotPassword = () => {
     const [data, setdata] = useState({ useremail: ''})
     const changeHandler = (e) => {
         setdata({ ...data, [e.target.name]: e.target.value })
       }
     const _Send_Request=async()=>{
-      const _API_Response=await axios.post('https://contest-web-app-backend.vercel.app/forgotPassword',data);
-      const _API_Response_Data=_API_Response.data;
-      if(_API_Response_Data.status===200){
-        alert('Email has been sent to your registered email address');
-      }
-      else{
-        alert('No user found');
-      }
+      axios.post('https://contest-web-app-backend.vercel.app/forgotPassword', data)
+        .then((res) => {
+          
+          if (res.data.status === 200) {
+            
+            swal("Yeah!!", "Password Reset mail sent", "success");
+          }
+          else if (res.data.status === 404) {
+            swal("Oops!", "No Uuer found", "error");
+          }
+          else if (res.data.status === 500) {
+            swal("Oops!!", "Please check the credentials", "error");
+          }
+          else {
+            swal("Oops!!", "Site Error", "error");
+          }
+        })
+        .catch((err) => {
+          swal("Oops!", "Something went wrong", "error");
+        })
       
     }
   return (

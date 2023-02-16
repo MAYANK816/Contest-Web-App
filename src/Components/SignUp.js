@@ -12,12 +12,12 @@ const SignUp = (props) => {
     if (data.useremail && data.password && data.username) {
       axios.post('https://contest-web-app-backend.vercel.app/register', data)
         .then((res) => {
+         
           if (res.data.status === 200) {
-            localStorage.setItem('loginData', JSON.stringify(res.data.alreadyExists))
-            props.loginCheck(true);
-            navigate("/");
+            navigate("/login");
             swal("Yeah!!", "Register Successfully", "success");
           }
+          
           else if (res.data.status === 500) {
             swal("Oops!!", "User Already Exists", "error");
           }
