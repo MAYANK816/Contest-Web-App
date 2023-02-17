@@ -10,7 +10,7 @@ const MyProfile = () => {
   let loginData=JSON.parse(localStorage.getItem('loginData'));
   
   const fetchData = () => {
-    fetch(`https://contest-web-app-backend.vercel.app/getUser/${loginData}`)
+    fetch(`https://violet-panther-robe.cyclic.app/getUser/${loginData}`)
       .then(response => {
         return response.json()
       })

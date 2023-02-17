@@ -10,7 +10,7 @@ const SignUp = (props) => {
   const navigate = useNavigate();
   const setLoginData = () => {
     if (data.useremail && data.password && data.username) {
-      axios.post('https://contest-web-app-backend.vercel.app/register', data)
+      axios.post('https://violet-panther-robe.cyclic.app/register', data)
         .then((res) => {
          
           if (res.data.status === 200) {

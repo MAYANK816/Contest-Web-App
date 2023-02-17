@@ -8,7 +8,7 @@ const ForgotPassword = () => {
         setdata({ ...data, [e.target.name]: e.target.value })
       }
     const _Send_Request=async()=>{
-      axios.post('https://contest-web-app-backend.vercel.app/forgotPassword', data)
+      axios.post('https://violet-panther-robe.cyclic.app/forgotPassword', data)
         .then((res) => {
           
           if (res.data.status === 200) {

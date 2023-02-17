@@ -11,7 +11,7 @@ const Login = (props) => {
   const navigate = useNavigate();
   const setLoginData = () => {
     if (data.useremail && data.password) {
-      axios.post('https://contest-web-app-backend.vercel.app/loginUser', data)
+      axios.post('https://violet-panther-robe.cyclic.app/loginUser', data)
         .then((res) => {
           if (res.data.status === 200) {
             let userData=res.data.user;
