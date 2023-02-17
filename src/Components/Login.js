@@ -5,11 +5,13 @@ import "./Login.css"
 import axios from 'axios';
 import swal from 'sweetalert';
 import Lottie from "lottie-react";
-
+import TextField from '@mui/material/TextField';
 const Login = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '' })
   const navigate = useNavigate();
+
   const setLoginData = () => {
+    console.log(data);
     if (data.useremail && data.password) {
       axios.post('https://violet-panther-robe.cyclic.app/loginUser', data)
         .then((res) => {
@@ -36,6 +38,7 @@ const Login = (props) => {
     }
   }
   const changeHandler = (e) => {
+    console.log(e.target.value);
     setdata({ ...data, [e.target.name]: e.target.value })
   }
 
@@ -44,10 +47,8 @@ const Login = (props) => {
       <div className='Login_formData'>
         <Lottie className='lottieAnimation' animationData={devanimation} loop={true} />
         <h1>LogIn</h1>
-        <label>Email</label>
-        <input type='text' name="useremail" placeholder='Enter your email' onChange={changeHandler} required />
-        <label>Password</label>
-        <input type='password' name="password" placeholder='Enter your password' onChange={changeHandler} required />
+        <TextField id="outlined-email" label="Email" type="text" variant="outlined" name="useremail" onChange={changeHandler} sx={{marginBottom:"10px"}}  />
+        <TextField id="outlined-password" label="Password" type="password" variant="outlined" name="password" onChange={changeHandler}   sx={{marginBottom:"10px"}} />
         <div className='forgot_password'>
           <div className='remember_me'>
             <input type='checkbox' name="remember" placeholder='Enter your password' onChange={changeHandler} required />

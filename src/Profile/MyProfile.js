@@ -15,9 +15,9 @@ const MyProfile = () => {
         return response.json()
       })
       .then(data => {
-          setuserOgData(data.user[0]);
-          userDetails.useremail=data.user[0].useremail;
-          userDetails.username=data.user[0].username;
+          setuserOgData(data.user);
+          userDetails.useremail=data.user.useremail;
+          userDetails.username=data.user.username;
       })
   }
   useEffect(() => {

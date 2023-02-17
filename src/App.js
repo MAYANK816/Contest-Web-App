@@ -5,7 +5,7 @@ import Home from './Components/Home'
 import SignUp from './Components/SignUp'
 import NavbarLoggedIn from './Components/Navbar_loggedIn'
 import Login from './Components/Login'
-import ComponentRender from './Components/ComponentRender'
+import About from './Components/About'
 import LeetCode from './SiteComponents/LeetCode'
 import Csacademy from './SiteComponents/CsAcademy'
 import KickStart from './SiteComponents/KickStart'
@@ -14,6 +14,7 @@ import CodeForces from './SiteComponents/CodeForces'
 import CodeChef from './SiteComponents/CodeChef'
 import MyProfile from './Profile/MyProfile'
 import ForgotPassword from './Components/ForgotPassword'
+import ContactUs from './Components/ContactUs'
 const App = () => {
   const [login, setlogin] = useState(localStorage.getItem('loginData')?true:false);
   useEffect(() => {
@@ -40,8 +41,8 @@ const App = () => {
       <Route path='/' element={login===true?<Home />:<Login loginCheck={loginCheck} />}/>
       <Route path='/myprofile' element={login===true?<MyProfile />:<Login loginCheck={loginCheck} />} />
       <Route path='/home' element={login===true?<Home/>:<Login loginCheck={loginCheck} />}/>
-      <Route path='/contactus' element={<ComponentRender name="contactus"/>}/>
-      <Route path='/about' element={<ComponentRender name="about"/>}/>
+      <Route path='/contactus' element={<ContactUs/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/signUp' element={<SignUp loginCheck={loginCheck} />} />
       <Route path='/login' element={<Login loginCheck={loginCheck} />} />
       <Route path='/hackerearth' element={login===true?<Hackerearth />:<Login loginCheck={loginCheck} />} />

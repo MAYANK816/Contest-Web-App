@@ -10,9 +10,8 @@ const ForgotPassword = () => {
     const _Send_Request=async()=>{
       axios.post('https://violet-panther-robe.cyclic.app/forgotPassword', data)
         .then((res) => {
-          
           if (res.data.status === 200) {
-            
+
             swal("Yeah!!", "Password Reset mail sent", "success");
           }
           else if (res.data.status === 404) {

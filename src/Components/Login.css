@@ -23,16 +23,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
 }
-.Login_formData label{
-    color: black;
-    margin-bottom: 10px;
+
+.remember_me label{
+    color: #000;
     font-weight: 600;
-}
-.Login_formData input{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
 }
 .Login_formData button{
     padding: 10px;

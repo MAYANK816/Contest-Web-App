@@ -7,7 +7,7 @@ const [data, setdata] = useState({useremail:''})
 
   const subscribe = () => {
     if (data.useremail) {
-      axios.post('https://contest-web-app-backend.vercel.app/subscribe',data)
+      axios.post('https://violet-panther-robe.cyclic.app/subscribe',data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {

@@ -12,6 +12,7 @@ const Navbar = () => {
   <div class="container-fluid">
     <div class="navbar-brand ">
     <Lottie style={{width:"65px"}}animationData={devanimation} loop={true} />;
+    <p>Drunken Geeks</p>
       </div>
     <button
       class="navbar-toggler text-light"

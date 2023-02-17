@@ -16,6 +16,7 @@ const Navbar_loggedIn = (props) => {
     <div class="container-fluid">
       <a class="navbar-brand" href="/">  
        <Lottie style={{width:"75px"}}animationData={devanimation} loop={true} />
+       <p>Drunken Geeks</p>
        </a>
       <button
         class="navbar-toggler text-light"

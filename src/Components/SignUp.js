@@ -5,6 +5,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import devanimation from ".././devanimation.json";
 import Lottie from "lottie-react";
+import TextField from '@mui/material/TextField';
 const SignUp = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '', username: '',subscribed:false})
   const navigate = useNavigate();
@@ -41,12 +42,9 @@ const SignUp = (props) => {
         <Lottie className='lottieAnimation' animationData={devanimation} loop={true} />
 
         <h1>SignUp</h1>
-        <label>Email</label>
-        <input type='text' name="useremail" placeholder='Enter your email' onChange={changeHandler} required />
-        <label>UserName</label>
-        <input type='text' name="username" placeholder='Choose Your Username' onChange={changeHandler} required />
-        <label>Password</label>
-        <input type='password' name="password" placeholder='Enter your password' onChange={changeHandler} required />
+        <TextField id="outlined-email" label="Email" type="text" variant="outlined" name="useremail" onChange={changeHandler} sx={{marginBottom:"10px"}}  />
+        <TextField id="outlined-email" label="Username" type="text" variant="outlined" name="username" onChange={changeHandler} sx={{marginBottom:"10px"}}  />
+        <TextField id="outlined-password" label="Password" type="password" variant="outlined" name="password" onChange={changeHandler}   sx={{marginBottom:"10px"}} />
         <button onClick={setLoginData} >
           SignUp
         </button>
