@@ -4,7 +4,7 @@ const CodeForces = () => {
     const[_ApiData,set_ApiData] = useState([]);
 
 useEffect(() => {
-  const _ApiCall_Function = async () => {
+   const _ApiCall_Function = async () => {
     const _ApiData = await fetch('https://kontests.net/api/v1/codeforces');
     const _ApiDataJson = await _ApiData.json();
     set_ApiData(_ApiDataJson);

@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import Editor from "@monaco-editor/react";
-import Axios from 'axios';
 import spinner from "./spinner.svg";
 import './CodeEditor.css'
 import EditorNavbar from './EditorNavbar';
+import axios from 'axios';
+import swal from 'sweetalert';
 const CodeEditor = () => {
 
     const [userCode, setUserCode] = useState(``);
     const [fontSize, setFontSize] = useState(20);
     // State variable to set editors default language
     const [userLang, setUserLang] = useState("java");
-    const [userInput, setUserInput] = useState("");
+    const [userInput, setUserInput] = useState('');
     const options = {
         fontSize: fontSize
     }
     // State variable to set editors default theme
     const [userTheme, setUserTheme] = useState("vs-dark");
 
-    const [userOutput, setUserOutput] = useState("");
+    const [userOutput, setUserOutput] = useState('');
 
     // Loading state variable to show spinner
     // while fetching data
@@ -26,18 +27,35 @@ const CodeEditor = () => {
     function compile() {
         setLoading(true);
         if (userCode === ``) {
-            return
+            setLoading(false);
+            swal("Oops!", "Please Enter the code", "error");
         }
         // Post request to compile endpoint
-        Axios.post(`https://violet-panther-robe.cyclic.app/compile`, {
+        axios.post("https://violet-panther-robe.cyclic.app/compile", {
             code: userCode,
             language: userLang,
             input: userInput
         }).then((res) => {
+            if (res.data.status === 200) {
+                setLoading(false);
+            }
+            else if (res.data.status === 404) {
+                swal("Oops!", "No Uuer found", "error");
+            }
+            else if (res.data.status === 500) {
+                swal("Oops!!", "Please check the credentials", "error");
+            }
+            else {
+                swal("Oops!!", "Site Error", "error");
+            }
             setUserOutput(res.data.output);
-        }).then(() => {
-            setLoading(false);
+        }).catch((err) => {
+            console.log(err);
+            swal("Oops!", "Something went wrong", err);
         })
+
+        // Set output to response data
+
     }
 
     function clearOutput() {
