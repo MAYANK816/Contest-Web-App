@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@monaco-editor/react": "^4.4.6",
     "@mui/material": "^5.11.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +16,7 @@
     "react-player": "^2.11.0",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
     "react-youtube": "^10.1.0",
     "styled-components": "^5.3.6",
     "sweetalert": "^2.1.2",
