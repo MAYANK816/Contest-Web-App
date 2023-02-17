@@ -6,16 +6,16 @@ import swal from 'sweetalert';
 import devanimation from ".././devanimation.json";
 import Lottie from "lottie-react";
 const SignUp = (props) => {
-  const [data, setdata] = useState({ useremail: '', password: '', username: '' })
+  const [data, setdata] = useState({ useremail: '', password: '', username: '',subscribed:false})
   const navigate = useNavigate();
   const setLoginData = () => {
     if (data.useremail && data.password && data.username) {
       axios.post('https://violet-panther-robe.cyclic.app/register', data)
         .then((res) => {
-         
           if (res.data.status === 200) {
-            navigate("/login");
+           
             swal("Yeah!!", "Register Successfully", "success");
+            navigate("/login");
           }
           
           else if (res.data.status === 500) {
@@ -26,6 +26,7 @@ const SignUp = (props) => {
           }
         })
         .catch((err) => {
+          console.log(err);
           swal("Oops!", "Please Check details", "error");
         })
     }
