@@ -41,10 +41,7 @@ const Navbar_loggedIn = (props) => {
               <li class="nav-item">
                 <Link class="nav-link text-light" to="/myprofile">My Profile</Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link text-light" to="/codeEditor">Practice Area</Link>
-              </li>
-
+           
               <li class="nav-item">
                 <Link class="nav-link text-light" to="/about">About Us</Link>
               </li>

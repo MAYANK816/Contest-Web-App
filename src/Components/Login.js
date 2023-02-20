@@ -7,6 +7,7 @@ import loader from '.././loader.gif'
 import swal from 'sweetalert';
 import Lottie from "lottie-react";
 import TextField from '@mui/material/TextField';
+import * as constants from '../Constants/Constants';
 const Login = (props) => {
   const [data, setdata] = useState({ useremail: '', password: '' })
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Login = (props) => {
         buttons: false,
         closeOnClickOutside: false
       });
-      axios.post('https://violet-panther-robe.cyclic.app/loginUser', data)
+      axios.post(`${constants.API_URL}loginUser`, data)
         .then((res) => {
           swal.close();
           if (res.data.status === 200) {

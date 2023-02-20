@@ -3,6 +3,7 @@ import devanimation from ".././devanimation.json";
 import axios from 'axios';
 import React, { useState,useEffect } from 'react'
 import swal from 'sweetalert';
+import * as constants from '../Constants/Constants';
 import './Profile.css';
 const MyProfile = () => {
   const[userOgData,setuserOgData]=useState([]);
@@ -10,7 +11,7 @@ const MyProfile = () => {
   let loginData=JSON.parse(localStorage.getItem('loginData'));
   
   const fetchData = () => {
-    fetch(`https://violet-panther-robe.cyclic.app/getUser/${loginData}`)
+    fetch(`${constants.API_URL}getUser/${loginData}`)
       .then(response => {
         return response.json()
       })
@@ -29,7 +30,7 @@ const MyProfile = () => {
   const updateUser = () => {
     console.log(userDetails);
     if (userDetails.newpassword === userDetails.cpassword && userDetails.password === userOgData.password && userDetails.cpassword) {
-      axios.put('https://contest-web-app-backend.vercel.app/updateUser', {
+      axios.put(`${constants.API_URL}updateUser`, {
         useremail: userDetails.useremail,
         password: userDetails.newpassword,
         username:userDetails.username

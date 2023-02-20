@@ -7,6 +7,7 @@ import swal from 'sweetalert';
 import devanimation from ".././devanimation.json";
 import Lottie from "lottie-react";
 import TextField from '@mui/material/TextField';
+import * as constants from '../Constants/Constants';
 const SignUp = () => {
   const [data, setdata] = useState({ useremail: '', password: '', username: '', subscribed: false })
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const SignUp = () => {
         closeOnClickOutside: false
         //icon: "success"
       });
-      axios.post('https://violet-panther-robe.cyclic.app/register', data)
+      axios.post(`${constants.API_URL}register`, data)
         .then((res) => {
           swal.close();
           if (res.data.status === 200) {

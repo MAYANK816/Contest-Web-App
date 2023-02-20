@@ -3,6 +3,7 @@ import './ForgotPass.css'
 import axios from 'axios'
 import loader from '.././loader.gif'
 import swal from 'sweetalert';
+import * as constants from '../Constants/Constants';
 const ForgotPassword = () => {
   const [data, setdata] = useState({ useremail: '' })
   const changeHandler = (e) => {
@@ -18,7 +19,7 @@ const ForgotPassword = () => {
         closeOnClickOutside: false
         //icon: "success"
       });
-      axios.post('https://violet-panther-robe.cyclic.app/forgotPassword', data)
+      axios.post(`${constants.API_URL}forgotPassword`, data)
         .then((res) => {
           swal.close();
           if (res.data.status === 200) {

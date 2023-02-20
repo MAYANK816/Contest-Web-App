@@ -2,12 +2,13 @@ import React,{useState} from 'react'
 import "./Home.css";
 import axios from 'axios';
 import swal from 'sweetalert';
+import * as constants from '../Constants/Constants';
 const Footer = () => {
 const [data, setdata] = useState({useremail:''})
 
   const subscribe = () => {
     if (data.useremail) {
-      axios.post('https://violet-panther-robe.cyclic.app/subscribe',data)
+      axios.post(`${constants.API_URL}subscribe`,data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
