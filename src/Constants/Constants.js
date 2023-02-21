@@ -1,1 +1,1 @@
-export const API_URL = 'http://3.108.127.101:8001/';
+export const API_URL = 'https://drunkengeeks.d3m0n1k.engineer/';
