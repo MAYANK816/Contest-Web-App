@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./Home.css";
 import axios from 'axios';
 import swal from 'sweetalert';
+import { Link} from 'react-router-dom'
 import * as constants from '../Constants/Constants';
 const Footer = () => {
 const [data, setdata] = useState({useremail:''})
@@ -32,16 +33,15 @@ const [data, setdata] = useState({useremail:''})
     <div className='Home_Footer'>
         <div className='Home_Footer_Container'>
             <div className='Home_Footer_Container_1'>
-                <h3>Contest Finder</h3>
-                <p>Home</p>
-                <p>Terms & Conditions</p>
-                <p>FAQ</p>
+                <h3>Drunken Geeks</h3>
+                <p >Home</p>
+                <p >FAQ</p>
             </div>
             <div className='Home_Footer_Container_2'>
                 <h3>Customer Service</h3>
-                <p>Contact Us</p>
-                <p>About Us</p>
-                <p>Privacy Policy</p>
+                <p >Contact Us</p>
+                <p >About Us</p>
+                
 
             </div>
           
