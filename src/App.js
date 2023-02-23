@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Components/Navbar'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,Navigate } from 'react-router-dom'
 import Home from './Components/Home'
 import SignUp from './Components/SignUp'
 import NavbarLoggedIn from './Components/Navbar_loggedIn'
@@ -15,6 +15,7 @@ import CodeChef from './SiteComponents/CodeChef'
 import MyProfile from './Profile/MyProfile'
 import ForgotPassword from './Components/ForgotPassword'
 import ContactUs from './Components/ContactUs'
+import Footer from './Components/Footer'
 const App = () => {
   const [login, setlogin] = useState(localStorage.getItem('loginData') ? true : false);
   useEffect(() => {
@@ -51,8 +52,13 @@ const App = () => {
           <Route path='/kickstart' element={login === true ? <KickStart /> : <Login loginCheck={loginCheck} />} />
           <Route path='/codeforces' element={login === true ? <CodeForces /> : <Login loginCheck={loginCheck} />} />
           <Route path='/codechef' element={login === true ? <CodeChef /> : <Login loginCheck={loginCheck} />} />
-          <Route path='/forgot_passcode' element={<ForgotPassword />} />
+          <Route path='/forgot_passcode' element={login === true ?<Navigate to='/' />:<ForgotPassword />} />
+          <Route path='*' element={<Navigate to='/' />} />
         </Routes>
+        <Footer/>
+          <div className='Home_Footer_Container_5'>
+            <p>© 2023 All Rights Reserved</p>
+        </div>
       </div>
     </Router>
   )
