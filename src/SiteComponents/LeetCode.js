@@ -15,9 +15,9 @@ useEffect(() => {
     <div className='Home_Products'>    
     {
       _ApiData.length>0? _ApiData.map((item,index) => {
-        return <CardComponent key={index} item={item} />
+        return <CardComponent key={index} item={item} idx={index} />
         })
-        : "No Contests Yet!"
+        : "Loading..."
     }
     </div>
   )

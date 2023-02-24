@@ -16,6 +16,7 @@ import MyProfile from './Profile/MyProfile'
 import ForgotPassword from './Components/ForgotPassword'
 import ContactUs from './Components/ContactUs'
 import Footer from './Components/Footer'
+import Favourites from './Profile/Favourites'
 const App = () => {
   const [login, setlogin] = useState(localStorage.getItem('loginData') ? true : false);
   useEffect(() => {
@@ -46,6 +47,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/signUp' element={<SignUp loginCheck={loginCheck} />} />
           <Route path='/login' element={<Login loginCheck={loginCheck} />} />
+          <Route path='/favourite' element={login === true ? <Favourites /> : <Login loginCheck={loginCheck} />} />
           <Route path='/hackerearth' element={login === true ? <Hackerearth /> : <Login loginCheck={loginCheck} />} />
           <Route path='/leetcode' element={login === true ? <LeetCode /> : <Login loginCheck={loginCheck} />} />
           <Route path='/csacademy' element={login === true ? <Csacademy /> : <Login loginCheck={loginCheck} />} />

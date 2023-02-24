@@ -7,6 +7,7 @@ import LeetCode from '../SiteComponents/LeetCode';
 import CodeChef from '../SiteComponents/CodeChef';
 
 const Home = () => {
+
   return (
     <div className="Home_Body">
     <div className='Home_Courses'>
@@ -15,7 +16,7 @@ const Home = () => {
       <p>UpComing Contests <span>2023</span></p>
       </div>
     </div>
- 
+   
     <h3 className="Home_Courses_Title"><span>HackerEarth Contests</span></h3>
       <Hackerearth/>
       <h3 className="Home_Courses_Title"><span>LeetCode Contests</span></h3>

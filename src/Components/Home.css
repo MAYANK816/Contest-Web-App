@@ -132,7 +132,6 @@
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(2,1fr);
     }
     .Card_div{
         margin: 10px;
@@ -156,7 +155,6 @@
         display: grid;
         place-items: center;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,1fr);
     }
     .home_circle_2{
     bottom: 5%;

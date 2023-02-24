@@ -49,6 +49,9 @@ const Navbar_loggedIn = (props) => {
               <li class="nav-item">
                 <Link class="nav-link text-light" to="/contactus">Contact Us</Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link text-light" to="/favourite">Favourites</Link>
+              </li>
               <li class="nav-item dropdown">
                 <Link class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Sites

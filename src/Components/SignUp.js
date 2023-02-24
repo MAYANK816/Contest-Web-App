@@ -12,7 +12,6 @@ const SignUp = () => {
   const [data, setdata] = useState({ useremail: '', password: '', username: '', subscribed: false })
   const navigate = useNavigate();
   const setLoginData = () => {
-
     if (data.useremail && data.password && data.username) {
       swal({
         title: "",
