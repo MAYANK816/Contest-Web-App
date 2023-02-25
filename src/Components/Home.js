@@ -16,15 +16,19 @@ const Home = () => {
       <p>UpComing Contests <span>2023</span></p>
       </div>
     </div>
-   
-    <h3 className="Home_Courses_Title"><span>HackerEarth Contests</span></h3>
+      <div style={{height:"max-content"}}>
+      <h3 className="Home_Courses_Title"><span>HackerEarth Contests</span></h3>
       <Hackerearth/>
+      </div>
+      <div style={{height:"max-content"}}>
       <h3 className="Home_Courses_Title"><span>LeetCode Contests</span></h3>
       <LeetCode/>
+      </div>
+      <div style={{height:"max-content"}}>
       <h3 className="Home_Courses_Title"><span>CodeChef Contests</span></h3>
       <CodeChef/>
-         
-        </div>
+      </div>
+      </div>
   )
 }
 
