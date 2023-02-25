@@ -83,7 +83,7 @@ const CardComponent = (props) => {
   
   return (
     <Card className="Card_div">
-    <CardContent style={{backgroundColor: "#121513", color: "white",height:"auto"}}>
+    <CardContent className="Card_div_child" >
     <Typography variant="p" color="text.secondary ">
       </Typography>
       <Typography gutterBottom variant="p" component="div">
@@ -96,8 +96,10 @@ const CardComponent = (props) => {
       <Typography gutterBottom variant="p" component="div">
         End Date: {dateFormat(item.end_time)}
       </Typography>
+      <Typography gutterBottom variant="p" component="div">
        <Button size="small" ><a href={`${item.url}`} style={{color:"white", background:"#3e92fc",padding:"3px",borderRadius:"2px", marginLeft:"5px"}}>Participate Now!!</a></Button>
        <Heart  AddtoFav={_Add_Favourite} />
+      </Typography>
     </CardContent>
    
   </Card>

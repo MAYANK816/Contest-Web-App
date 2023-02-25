@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import CardComponent from '../SiteComponents/CardComponent';
 import * as constants from '../Constants/Constants';
+import './Favourites.css'
 const Favourites = () => {
     const [data, setdata] = useState([]);
     const [loading,setloading]=useState(true);
@@ -13,8 +14,7 @@ const Favourites = () => {
           })
           .then((data)=> {
             setdata(data.user);
-            
-          })
+          });
       }
       useEffect(() => {
         fetchData()
@@ -29,7 +29,7 @@ const Favourites = () => {
     else return " No Favourites"
   }  
   return (
-    <div>
+    <div className='fav-cards'>
         {
         _perform_Operation()
         }
