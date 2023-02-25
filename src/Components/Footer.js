@@ -10,7 +10,6 @@ const [data, setdata] = useState({useremail:''})
     if (data.useremail) {
       axios.post(`${constants.API_URL}subscribe`,data)
       .then((res) => {
-        console.log(res);
         if (res.data.status === 200) {
             swal("Good job!", "Subscribed Successfully !", "success");
         }
@@ -40,10 +39,7 @@ const [data, setdata] = useState({useremail:''})
                 <h3>Customer Service</h3>
                 <p >Contact Us</p>
                 <p >About Us</p>
-                
-
             </div>
-          
             <div className='Home_Footer_Container_4'>
                 <h3>Newsletter</h3>
                 <p>Subscribe to our newsletter for latest updates</p>

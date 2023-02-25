@@ -74,6 +74,9 @@
     font-family: 'Orbitron', sans-serif;
     color:#fd6553;
 }
+.Home_Footer{
+    height: max-content;
+}
 .Home_Footer_Container_5{
     text-align: center;
 }
