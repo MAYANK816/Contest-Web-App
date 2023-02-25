@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import CardComponent from "./CardComponent"
+
 const LeetCode = () => {
     const[_ApiData,set_ApiData] = useState([]);
-
 useEffect(() => {
   const _ApiCall_Function = async () => {
     const _ApiData = await fetch('https://kontests.net/api/v1/leet_code');
