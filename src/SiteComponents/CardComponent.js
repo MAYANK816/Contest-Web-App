@@ -21,20 +21,6 @@ const CardComponent = (props) => {
 
     console.log(new Date(now_utc));
     return new Date(now_utc).toString();
-
-
-    // let  startDate = new Date(api_value);
-    // let  year = startDate.getFullYear();
-    // let  month = startDate.getMonth()+1;
-    // let  dt = startDate.getDate();
-     
-    //  if (dt < 10) {
-    //    dt = '0' + dt;
-    //  }
-    //  if (month < 10) {
-    //    month = '0' + month;
-    //  }
-    //  return (year+'-' + month + '-'+dt).toString();
 }
 
   const _Add_Favourite = () => {
