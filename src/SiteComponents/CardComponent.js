@@ -101,7 +101,7 @@ const CardComponent = (props) => {
       </Typography>
       
       <Typography gutterBottom variant="p" component="div">
-        Starte Date: {dateFormat(item.start_time)}
+        Start Date: {dateFormat(item.start_time)}
       </Typography>
       <Typography gutterBottom variant="p" component="div">
         End Date: {dateFormat(item.end_time)}
