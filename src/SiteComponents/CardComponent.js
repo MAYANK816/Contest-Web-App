@@ -19,7 +19,6 @@ const CardComponent = (props) => {
                     date.getUTCDate(), date.getUTCHours(),
                     date.getUTCMinutes(), date.getUTCSeconds());
 
-    console.log(new Date(now_utc));
     return new Date(now_utc).toString();
 }
 
