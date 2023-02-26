@@ -12,7 +12,7 @@
   flex-direction: column;
   background-color:#121513 ;
   color: white;
-  height: 200px;
+  height: min-content;
 }
 @media screen and (max-width: 768px) {
     .Card_div{

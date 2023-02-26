@@ -11,7 +11,6 @@ useEffect(() => {
   }
   _ApiCall_Function();
 },[]);
-
   return (
     <div className='Home_Products'>    
     {

@@ -13,18 +13,28 @@ const CardComponent = (props) => {
   let item = props.item;
  
   const dateFormat=(api_value)=>{
-    let  startDate = new Date(api_value);
-    let  year = startDate.getFullYear();
-    let  month = startDate.getMonth()+1;
-    let  dt = startDate.getDate();
+    
+    let date = new Date(api_value);
+    let now_utc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(),
+                    date.getUTCDate(), date.getUTCHours(),
+                    date.getUTCMinutes(), date.getUTCSeconds());
+
+    console.log(new Date(now_utc));
+    return new Date(now_utc).toString();
+
+
+    // let  startDate = new Date(api_value);
+    // let  year = startDate.getFullYear();
+    // let  month = startDate.getMonth()+1;
+    // let  dt = startDate.getDate();
      
-     if (dt < 10) {
-       dt = '0' + dt;
-     }
-     if (month < 10) {
-       month = '0' + month;
-     }
-     return year+'-' + month + '-'+dt;
+    //  if (dt < 10) {
+    //    dt = '0' + dt;
+    //  }
+    //  if (month < 10) {
+    //    month = '0' + month;
+    //  }
+    //  return (year+'-' + month + '-'+dt).toString();
 }
 
   const _Add_Favourite = () => {
