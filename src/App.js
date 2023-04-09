@@ -18,17 +18,18 @@ import ContactUs from './Components/ContactUs'
 import Footer from './Components/Footer'
 import Favourites from './Profile/Favourites'
 const App = () => {
-  const [login, setlogin] = useState(localStorage.getItem('loginData') ? true : false);
+//   const [login, setlogin] = useState(localStorage.getItem('loginData') ? true : false);
+  const [login, setlogin] = useState(true);
   useEffect(() => {
     _Togggle_Nav();
   }, [login]);
 
   const _Togggle_Nav = () => {
-    if (login === false)
+//     if (login === false)
       return <Navbar />
-    else {
-      return <NavbarLoggedIn loginCheck={loginCheck} />
-    }
+//     else {
+//       return <NavbarLoggedIn loginCheck={loginCheck} />
+//     }
   }
   const loginCheck = (_Login_Val) => {
     setlogin(_Login_Val)
